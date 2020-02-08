@@ -32,10 +32,9 @@ func main() {
 		r.Route("/tags", func(r chi.Router) {
 			r.Get("/", handlers.GetAvailableTags)
 		})
-	})
-
-	r.Route("/benchmark", func(r chi.Router) {
-		r.Get("/", handlers.Benchmark)
+		r.Route("/benchmark", func(r chi.Router) {
+			r.Get("/", handlers.Benchmark)
+		})
 	})
 
 	http.ListenAndServe(":3333", r)
